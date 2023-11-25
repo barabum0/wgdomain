@@ -1,10 +1,10 @@
 import click_completion
 
-from commands import cli, reset
-from commands.exclude import exclude
-from commands.include import include
-from commands.reset.all import reset_all
-from commands.reset.none import reset_none
+from wgdomain.commands import cli, reset
+from wgdomain.commands.exclude import exclude
+from wgdomain.commands.include import include
+from wgdomain.commands.reset.all import reset_all
+from wgdomain.commands.reset.none import reset_none
 
 click_completion.init()
 
