@@ -1,9 +1,7 @@
 import click
 
-from wgdomain.commands import cli
 
-
-@cli.command()
+@click.command()
 @click.argument('config_file', type=click.Path(exists=True, dir_okay=False))
 @click.argument('domain')
 def exclude(config_file: str, domain: str):
