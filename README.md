@@ -1,40 +1,40 @@
 # Wireguard Domain Manager
 
-## Описание
-Wireguard Domain Manager - это инструмент командной строки для управления доменами и IP-адресами в конфигурации VPN Wireguard. Он позволяет легко включать, исключать домены, а также сбрасывать настройки для определенного поведения маршрутизации.
+## Description
+Wireguard Domain Manager is a command-line tool for managing domains and IP addresses in Wireguard VPN configuration. It enables easy inclusion and exclusion of domains, as well as resetting settings for specific routing behaviors.
 
-## Установка
-Опишите здесь, как установить ваш инструмент. Например, если вы используете `poetry`, то:
+## Installation
+Describe here how to install your tool. For instance, if you are using `poetry`, then:
 ```bash
 pipx install git+https://github.com/barabum0/wgdomain
 wgdomain --help
 ```
 
-## Использование
-Примеры использования команд:
+## Usage
+Examples of using commands:
 
-### Добавление домена
-Чтобы добавить домен или IP-адрес для маршрутизации через Wireguard:
+### Adding a Domain
+To add a domain or IP address for routing through Wireguard:
 ```bash
 wgdomain include /path/to/wireguard.conf example.com
 ```
 
-### Исключение домена
-#### Данная функция основана на [ZerGo0/WireGuard-Allowed-IPs-Excluder](https://github.com/ZerGo0/WireGuard-Allowed-IPs-Excluder) _(упрощено ChatGPT)_
-Чтобы исключить домен или IP-адрес из маршрутизации через Wireguard:
+### Excluding a Domain
+#### This feature is based on [ZerGo0/WireGuard-Allowed-IPs-Excluder](https://github.com/ZerGo0/WireGuard-Allowed-IPs-Excluder) _(simplified by ChatGPT)_
+To exclude a domain or IP address from routing through Wireguard:
 ```bash
 wgdomain exclude /path/to/wireguard.conf example.com
 ```
 
-### Сброс настроек
-#### Принять все домены
-Чтобы сбросить конфигурацию так, чтобы принимались все домены:
+### Resetting Settings
+#### Accept All Domains
+To reset the configuration to accept all domains:
 ```bash
 wgdomain reset all /path/to/wireguard.conf
 ```
 
-#### Не принимать ни одного домена
-Чтобы сбросить конфигурацию так, чтобы исключались все домены:
+#### Exclude All Domains
+To reset the configuration to exclude all domains:
 ```bash
 wgdomain reset none /path/to/wireguard.conf
 ```
