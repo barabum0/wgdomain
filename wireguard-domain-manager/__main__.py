@@ -6,7 +6,7 @@ click_completion.init()
 
 @click.group()
 def cli():
-    """Управляет доменами и IP-адресами в конфигурации Wireguard."""
+    """Manages domains and IPs in Wireguard configurations."""
     pass
 
 
@@ -14,31 +14,31 @@ def cli():
 @click.argument('config_file', type=click.Path(exists=True, dir_okay=False))
 @click.argument('domain')
 def include(config_file, domain):
-    """Добавляет домен или IP-адрес для маршрутизации через Wireguard."""
-    # Код для добавления домена/IP
-    click.echo(f"Добавление {domain} в {config_file}.")
+    """Includes a domain or IP for routing through Wireguard."""
+    # Code to include domain/IP
+    click.echo(f"Including {domain} in {config_file}.")
 
 
 @cli.command()
 @click.argument('config_file', type=click.Path(exists=True, dir_okay=False))
 @click.argument('domain')
 def exclude(config_file, domain):
-    """Исключает домен или IP-адрес из маршрутизации через Wireguard."""
-    # Код для исключения домена/IP
-    click.echo(f"Исключение {domain} из {config_file}.")
+    """Excludes a domain or IP from routing through Wireguard."""
+    # Code to exclude domain/IP
+    click.echo(f"Excluding {domain} from {config_file}.")
 
 
 @cli.command()
 @click.argument('config_file', type=click.Path(exists=True, dir_okay=False))
 @click.argument('setting', type=click.Choice(['all', 'none'], case_sensitive=False))
 def reset(config_file, setting):
-    """Сбрасывает настройки конфигурации для принятия всех или никаких доменов."""
+    """Resets configuration to accept all or no domains."""
     if setting == 'all':
-        # Код для сброса конфигурации, чтобы принимать все домены
-        click.echo(f"Сброс {config_file} для принятия всех доменов.")
+        # Code to reset configuration to accept all domains
+        click.echo(f"Resetting {config_file} to accept all domains.")
     elif setting == 'none':
-        # Код для сброса конфигурации, чтобы не принимать ни одного домена
-        click.echo(f"Сброс {config_file} для исключения всех доменов.")
+        # Code to reset configuration to exclude all domains
+        click.echo(f"Resetting {config_file} to exclude all domains.")
 
 
 if __name__ == '__main__':
