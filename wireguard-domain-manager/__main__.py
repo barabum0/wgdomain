@@ -4,27 +4,42 @@ import click_completion
 click_completion.init()
 
 
-@click.command()
+@click.group()
+def cli():
+    """Управляет доменами и IP-адресами в конфигурации Wireguard."""
+    pass
+
+
+@cli.command()
 @click.argument('config_file', type=click.Path(exists=True, dir_okay=False))
-@click.argument('action', type=click.Choice(['include', 'exclude'], case_sensitive=False))
 @click.argument('domain')
-def app(config_file, action, domain):
-    """
-    Управляет доменами и IP-адресами в конфигурации Wireguard.
+def include(config_file, domain):
+    """Добавляет домен или IP-адрес для маршрутизации через Wireguard."""
+    # Код для добавления домена/IP
+    click.echo(f"Добавление {domain} в {config_file}.")
 
-    CONFIG_FILE: Путь к файлу конфигурации Wireguard.
-    ACTION: 'include' для добавления, 'exclude' для исключения домена/IP.
-    DOMAIN: Домен или IP-адрес для обработки.
-    """
 
-    match action:
-        case "include":
-            # Код для добавления домена/IP
-            click.echo(f"Добавление {domain} в {config_file}.")
-        case "exclude":
-            # Код для исключения домена/IP
-            click.echo(f"Исключение {domain} из {config_file}.")
+@cli.command()
+@click.argument('config_file', type=click.Path(exists=True, dir_okay=False))
+@click.argument('domain')
+def exclude(config_file, domain):
+    """Исключает домен или IP-адрес из маршрутизации через Wireguard."""
+    # Код для исключения домена/IP
+    click.echo(f"Исключение {domain} из {config_file}.")
+
+
+@cli.command()
+@click.argument('config_file', type=click.Path(exists=True, dir_okay=False))
+@click.argument('setting', type=click.Choice(['all', 'none'], case_sensitive=False))
+def reset(config_file, setting):
+    """Сбрасывает настройки конфигурации для принятия всех или никаких доменов."""
+    if setting == 'all':
+        # Код для сброса конфигурации, чтобы принимать все домены
+        click.echo(f"Сброс {config_file} для принятия всех доменов.")
+    elif setting == 'none':
+        # Код для сброса конфигурации, чтобы не принимать ни одного домена
+        click.echo(f"Сброс {config_file} для исключения всех доменов.")
 
 
 if __name__ == '__main__':
-    app()
+    cli()
