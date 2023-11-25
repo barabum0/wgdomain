@@ -2,6 +2,7 @@ import configparser
 
 import click
 import click_completion
+from __init__ import cli, reset
 
 click_completion.init()
 
@@ -11,12 +12,6 @@ def parse_config_file(config_file_path: str) -> configparser.ConfigParser:
     config = configparser.ConfigParser()
     config.read(config_file_path)
     return config
-
-
-@click.group()
-def cli():
-    """Manages domains and IPs in Wireguard configurations."""
-    pass
 
 
 @cli.command()
@@ -35,12 +30,6 @@ def exclude(config_file: str, domain: str):
     """Excludes a domain or IP from routing through Wireguard."""
     # Code to exclude domain/IP
     click.echo(f"Excluding {domain} from {config_file}.")
-
-
-@cli.group()
-def reset():
-    """Resets configuration settings."""
-    pass
 
 
 @reset.command(name='all')
