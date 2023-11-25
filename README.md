@@ -20,6 +20,7 @@ wgdomain include /path/to/wireguard.conf example.com
 ```
 
 ### Исключение домена
+#### Данная функция основана на [ZerGo0/WireGuard-Allowed-IPs-Excluder](https://github.com/ZerGo0/WireGuard-Allowed-IPs-Excluder)
 Чтобы исключить домен или IP-адрес из маршрутизации через Wireguard:
 ```bash
 wgdomain exclude /path/to/wireguard.conf example.com
