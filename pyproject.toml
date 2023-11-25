@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.11"
 click = "^8.1.7"
 dnspython = "^2.4.2"
+click-completion = "^0.5.2"
 
 
 [build-system]
