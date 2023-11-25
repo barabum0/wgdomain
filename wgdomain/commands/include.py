@@ -18,7 +18,7 @@ def include(config_file: str, domain: str, qr: bool, no_save: bool):
     ips = get_A_records(domain)
     ips = [f"{ip}/32" for ip in ips]
 
-    allowed_ips = config.get("Peer", "AllowedIPs").strip(",")
+    allowed_ips = config.get("Peer", "AllowedIPs").split(",")
     allowed_ips = [ip.strip() for ip in allowed_ips]
     allowed_ips += ips
     allowed_ips = list(set(allowed_ips))
