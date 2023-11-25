@@ -1,7 +1,7 @@
 import ipaddress
 
 
-def process_ip_networks(allowed_ips_str, disallowed_ips_str):
+def exclude_ip_networks(allowed_ips_str, disallowed_ips_str):
     def parse_ip_networks(ip_list_str):
         networks, invalid_ips = [], []
         for ip in ip_list_str.split(","):
