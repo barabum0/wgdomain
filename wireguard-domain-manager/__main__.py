@@ -5,7 +5,7 @@ click_completion.init()
 
 
 @click.command()
-@click.argument('config_file', type=click.Path())
+@click.argument('config_file', type=click.Path(exists=True, dir_okay=False))
 @click.argument('action', type=click.Choice(['include', 'exclude'], case_sensitive=False))
 @click.argument('domain')
 def app(config_file, action, domain):
