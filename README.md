@@ -6,7 +6,8 @@ Wireguard Domain Manager - это инструмент командной стр
 ## Установка
 Опишите здесь, как установить ваш инструмент. Например, если вы используете `poetry`, то:
 ```bash
-poetry install wireguard-domain-manager
+pipx install git+https://github.com/barabum0/wgdomain
+wgdomain --help
 ```
 
 ## Использование
