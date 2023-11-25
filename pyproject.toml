@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "wireguard-domain-manager"
+name = "wgdomain"
 version = "0.1.0"
 description = "An application for managing domains and IPs in Wireguard, ensuring traffic routing only for selected addresses."
 authors = ["Roman Poltorabatko <barabum@duck.com>"]
