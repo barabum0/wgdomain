@@ -24,7 +24,6 @@ def exclude(config_file: str, domain: str, qr: bool, no_save: bool):
 
     allowed_ips = exclude_ip_networks(allowed_ips, excluded_ips)
 
-
     config.set("Peer", "AllowedIPs", ", ".join(allowed_ips))
 
     if not no_save:
