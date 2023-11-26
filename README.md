@@ -4,7 +4,6 @@
 Wireguard Domain Manager is a command-line tool for managing domains and IP addresses in Wireguard VPN configuration. It enables easy inclusion and exclusion of domains, as well as resetting settings for specific routing behaviors.
 
 ## Installation
-Describe here how to install your tool. For instance, if you are using `poetry`, then:
 ```bash
 pipx install git+https://github.com/barabum0/wgdomain
 wgdomain --help
